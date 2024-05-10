@@ -1,0 +1,23 @@
+<?php
+
+$S['security'] = [
+    'appkey' => 'a_super_random_string',
+
+];
+
+$S['db'] = [
+    'host' => 'localhost',
+    'port' => 3306,
+    'name' => 'mygrowdb',
+    'user' => 'mygrowdb',
+    'password' => 'mypassword',
+    'charset' => 'utf8',
+];
+
+
+$S['smarty'] = [
+    'TemplateDir' => $S['dirs']['incdir'] . 'template/',
+    'ConfigDir' => $S['dirs']['incdir'] . 'smartyconfig/',
+    'CompileDir' => $S['dirs']['incdir'] . 'smartycompile/',
+    'CacheDir' => $S['dirs']['incdir'] . 'smartycache/',
+];
