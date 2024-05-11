@@ -15,6 +15,8 @@ $data = array();
 
 
 $router->any(['POST','GET'],'/api/settings', function () {
+    if(!isset($_SESSION['auth_roles'])) return false;
+    if($_SESSION['auth_roles'] != "1") return false;
     global $S, $returndata;
     $S['sys']['api']['section'] = "settings";
     if(count($_REQUEST)< 1) fOutputSettings();
@@ -58,6 +60,7 @@ function fOutPutSettingsInput(){
 
 
 $smarty->assign('sys',$S['sys']);
+$smarty->assign('userdata',$userdata);
 $smarty->assign('debug',$debug);
 $smarty->assign('mod',$mod);
 $smarty->assign('data',$data);

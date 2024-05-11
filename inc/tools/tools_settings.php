@@ -2,13 +2,14 @@
 
 function fGetSettings(){
     global $S;
-    $res = DB::query("Select id, setting_key, setting_value, setting_hint from syssettings");
+    $res = DB::query("Select id, setting_key, setting_value, setting_hint, setting_syslock from syssettings");
     $data = array();
     for($x=0 ; $x < count($res);$x++){
         $data[ $res[$x]['setting_key'] ] = [
             "value" => $res[$x]['setting_value'], 
             "hint" => $res[$x]['setting_hint'],
             "id" => $res[$x]['id'],
+            "locked" => $res[$x]['setting_syslock'],
         ];
     }
     $S['sys']['settings'] = $data;

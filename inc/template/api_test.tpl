@@ -1,4 +1,4 @@
-
+{if !$sys.useauth || $userdata.loggedin} 
 
 {if $section == "settings"}
     {include "api/api_settings.tpl"}
@@ -13,5 +13,11 @@
     {foreach $debug as $msg}
         <hr><pre>{$msg}</pre><hr>
     {/foreach}
+{/if}
+
+
+
+{else}
+<h1>NOT AUTHENTIFICATED</h1>
 {/if}
     

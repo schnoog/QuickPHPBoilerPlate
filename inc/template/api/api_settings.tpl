@@ -1,26 +1,22 @@
 {if $mod == "table"}
-        
-
-    <table class="table-expand">
+  <h4>Settings<h4>      
+  <button class="button" type="button" onclick="fSettingsNew();">New Setting</button>
+    <table class="stack">
     <thead>
-      <tr class="table-expand-row">
-        <th width="200">Setting</th>
-        <th>Value</th>
-        <th class="text-right" width="150">Description</th>
-        <th class="text-right" width="150">Action
-        
-        <button class="button" type="button" onclick="fSettingsNew();">New Setting</button>
-        
-        </th>
+      <tr>
+        <th width="30%">Setting</th>
+        <th width="20%">Value</th>
+        <th class="text-right" width="40%">Description</th>
+        <th class="text-right" width="20%">Action</th>
       </tr>
     </thead>
     <tbody>
     {foreach $data as $set=>$det}
 
-      <tr class="table-expand-row" data-open-details>
-        <td>{$set}</td>
-        <td>{$det.value}</td>
-        <td class="text-right">{$det.hint}</td>
+      <tr>
+    <td><h6>{$set}</h6>{if $det.locked == "1"}<h6><small>Systemsetting</small></h6> {/if}</td>
+        <td><h6>{$det.value}</h6></td>
+        <td class="text-right"><h6>{$det.hint}</h6></td>
         <td><form method="post"><button class="button" type="button" onclick="fSettingsEdit({$det.id});">Edit</button></form></td>
       </tr>
   
@@ -42,8 +38,13 @@
       <h2>{if $data.setting_key|isset}{$data.setting_key}{/if}</h2><h3>{if $data.setting_hint|isset}{$data.setting_hint}{/if}</h3>
 
       {if $data.id|isset}
-        <input name="setting_key" id="setting_key" type="hidden" value="{$data.setting_key}">
-
+          {if $data.setting_syslock == "1"}
+          <input name="setting_key" id="setting_key" type="hidden" value="{$data.setting_key}">
+          {else}
+            <label for="settings_key"><h4>Setting</h4>
+            <input name="setting_key" id="setting_key" type="text" value="{$data.setting_key}" >
+            </label>          
+          {/if}
       {else}
         <label for="settings_key"><h4>Setting</h4>
         <input name="setting_key" id="setting_key" type="text" value="" placeholder="Your new setting">
