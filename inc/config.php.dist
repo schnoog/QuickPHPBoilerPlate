@@ -1,6 +1,7 @@
 <?php
 
 $S['security'] = [
+    'use_authentification' => true,
     'appkey' => 'a_super_random_string',
 
 ];
@@ -8,16 +9,14 @@ $S['security'] = [
 $S['db'] = [
     'host' => 'localhost',
     'port' => 3306,
-    'name' => 'mygrowdb',
-    'user' => 'mygrowdb',
+    'name' => 'quickboilerplate',
+    'user' => 'quickboilerplate',
     'password' => 'mypassword',
     'charset' => 'utf8',
 ];
 
 
-$S['smarty'] = [
-    'TemplateDir' => $S['dirs']['incdir'] . 'template/',
-    'ConfigDir' => $S['dirs']['incdir'] . 'smartyconfig/',
-    'CompileDir' => $S['dirs']['incdir'] . 'smartycompile/',
-    'CacheDir' => $S['dirs']['incdir'] . 'smartycache/',
-];
+$S['sys']['debug']['routing'] = false;
+$S['sys']['debug']['apirouting'] = false;
+$S['sys']['debug']['apidebugout'] = false;
+$S['sys']['logfile'] = ""; 

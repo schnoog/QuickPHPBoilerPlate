@@ -1,0 +1,114 @@
+.mega-menu .dropdown-pane {
+    width: 100%;
+    max-width: 85rem;
+    margin: 0 auto !important;
+    left: 0% !important;
+    right: 0% !important;
+  }
+  
+  .mega-menu .menu {
+    background: none;
+  }
+  
+  .mega-menu > a::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: #1779ba transparent transparent;
+    margin-left: 10px;
+    margin-top: 11%;
+  }
+  
+  .floated-label-wrapper {
+    position: relative;
+  }
+  
+  .floated-label-wrapper label {
+    background: #fefefe;
+    color: #1779ba;
+    font-size: 0.75rem;
+    font-weight: 600;
+    left: 0.75rem;
+    opacity: 0;
+    padding: 0 0.25rem;
+    position: absolute;
+    top: 2rem;
+    transition: all 0.15s ease-in;
+    z-index: -1;
+  }
+  
+  .floated-label-wrapper label input[type=text],
+  .floated-label-wrapper label input[type=email],
+  .floated-label-wrapper label input[type=password] {
+    border-radius: 4px;
+    font-size: 1.75em;
+    padding: 0.5em;
+  }
+  
+  .floated-label-wrapper label.show {
+    opacity: 1;
+    top: -0.85rem;
+    z-index: 1;
+    transition: all 0.15s ease-in;
+  }
+  
+  .table-expand {
+    margin-top: 5rem;
+  
+    td {
+      color: $dark-gray;
+    }
+  
+    tr {
+      border: 1px solid $light-gray;
+    }
+  
+    .text-right {
+      padding-right: 3rem;
+    }
+  }
+  
+  .table-expand-row {
+    &.is-active {
+      .expand-icon::after {
+        content: '-';
+      }
+    }
+  
+    .expand-icon::after {
+      content: '+';
+      float: right;
+    }
+  }
+  
+  // this is where the magic happens
+  .table-expand-row-content {
+    display: none;
+  }
+  
+  .table-expand-row-content {
+    &.is-active {
+      display: table-row;
+      animation: fadeIn ease-in 1;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+    }
+  }
+  
+  .table-expand-row-nested {
+    background-color: $light-gray;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

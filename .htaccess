@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Forward requests to /api/* to formapi.php
+RewriteRule ^api/(.*)$ formapi.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
