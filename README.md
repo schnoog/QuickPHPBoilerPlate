@@ -4,7 +4,7 @@ A small set of code to lauch a php project with
 -smarty template engine
 -MeekroDB database connection
 -Foundation Framework 
--User authentification
+-User authentication
 
 ## But why
 
