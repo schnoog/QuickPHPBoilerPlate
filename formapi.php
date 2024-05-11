@@ -14,6 +14,30 @@ $data = array();
 
 
 
+$router->any(['POST','GET'],'/api/userman', function () {
+    if(!isset($_SESSION['auth_roles'])) return false;
+    if($_SESSION['auth_roles'] != "1") return false;
+    global $S, $returndata;
+    $S['sys']['api']['section'] = "settings";
+    if(count($_REQUEST)< 1) fOutputSettings();
+    if(isset($_REQUEST['id'])){
+        fOutPutSingleSetting($_REQUEST['id']);
+    }
+    if(isset($_REQUEST['new'])){
+        fOutPutSettingsInput();
+
+
+    }
+    if(isset($_REQUEST['save'])){
+        fSaveSettings();
+        fOutputSettings();
+    }
+
+
+});
+
+
+
 $router->any(['POST','GET'],'/api/settings', function () {
     if(!isset($_SESSION['auth_roles'])) return false;
     if($_SESSION['auth_roles'] != "1") return false;

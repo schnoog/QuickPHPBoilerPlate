@@ -54,7 +54,7 @@ if($route_is_set){
     require_once( $S['dirs']['pagedir'] . $selphp); 
     if($S['sys']['debug']['routing'])$msg[] = $S['dirs']['pagedir'] . $selphp;
     if($S['sys']['debug']['routing'])$msg[] = "Routed to " . $selphp;
-    $S['sys']['js'][] = "js_api.tpl";
+    
 }
 
 
@@ -70,7 +70,7 @@ if($route_is_set){
 //$debug = ['SESSION' => $_SESSION, 'AUTH' => $auth];
 $S['sys']['js'][] = "js_pageview.tpl";
 $S['sys']['js'][] = "js_settings.tpl";
-
+$S['sys']['js'][] = "js_api.tpl";
 $debug['server'] = $_SERVER;
 $smarty->assign('msg',$msg);
 $S['sys']['user'] = $userdata;

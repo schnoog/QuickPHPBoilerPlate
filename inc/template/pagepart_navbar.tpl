@@ -29,7 +29,7 @@
                 <li><a href="#">Three</a></li>
               </ul>
             </div>
-          </div>
+            </div>
 
         </div>
       </li>
@@ -45,6 +45,30 @@
     {if $userdata.loggedin}
 
       {if $userdata.session.auth_roles == "1"}
+
+
+        <li class="mega-menu">
+        <a data-toggle="mega-menu2" href="#">Administration</a>
+
+        <div class="dropdown-pane bottom" id="mega-menu2" data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true; vOffset:11">
+
+          <div class="row expanded">
+            <div class="column">
+              <ul class="menu vertical">
+                <li><button type="button" class="button" onclick="fetchDataAndDisplay('/settings','contentholder');">Settings</button></li>
+                <li><button type="button" class="button" onclick="fetchDataAndDisplay('/userman','contentholder');">User-Manager</button></li>
+                <li><a href="#">Three</a></li>
+              </ul>
+            </div>
+
+            </div>
+
+        </div>
+      </li>
+
+
+
+
         <li><button type="button" class="button" onclick="fetchDataAndDisplay('/settings','contentholder');">Settings</button></li>
       {/if}
 
