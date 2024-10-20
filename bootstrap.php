@@ -1,4 +1,5 @@
 <?php 
+$S = array();
 $debug = array();
 $msg = array();
 $S['dirs']['basedir'] = __DIR__ . "/";
