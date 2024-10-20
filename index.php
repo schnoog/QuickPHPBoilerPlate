@@ -68,6 +68,7 @@ if($route_is_set){
 
 
 //$debug = ['SESSION' => $_SESSION, 'AUTH' => $auth];
+if(!is_array($S['sys']['js'])) $S['sys']['js'] = array();
 $S['sys']['js'][] = "js_pageview.tpl";
 $S['sys']['js'][] = "js_settings.tpl";
 $S['sys']['js'][] = "js_api.tpl";
